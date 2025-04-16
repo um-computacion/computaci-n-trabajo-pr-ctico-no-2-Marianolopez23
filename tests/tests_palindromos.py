@@ -34,6 +34,23 @@ class TestPalindromesFrases(unittest.TestCase):
     
     def test_palindrome_amorroma(self):
         self.assertTrue(is_palindrome("Amor, Roma"))
+        
+class TestFrasesNoPalindromas(unittest.TestCase):
+
+    def test_frase_comun(self):
+        self.assertFalse(is_palindrome("esto es un simulacro"))
+
+    def test_frase_con_mayusculas(self):
+        self.assertFalse(is_palindrome("Siempre Presente"))
+
+    def test_frase_con_simbolos(self):
+        self.assertFalse(is_palindrome("vender un celular $"))
+
+    def test_frase_larga(self):
+        self.assertFalse(is_palindrome("cocinar unos fideos con crema y salsa"))
+
+    def test_frase_casi_palindromo(self):
+        self.assertFalse(is_palindrome("Amar, Roma"))
 
         
 if __name__ == '__main__':
